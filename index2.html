@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Héléna Guertin | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: #ffffff;
+      padding-top: 80px;
+      line-height: 1.6;
+	  text-align: justify;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10%;
+      height: 80px;
+      background-color: #111;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid #ff3c38;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ff3c38;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-links li a:hover, .nav-links li a.active {
+      color: #ff3c38;
+    }
+
+    /* --- SECTIONS --- */
+    .section {
+      padding: 60px 10%;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      border-left: 5px solid #ff3c38;
+      padding-left: 15px;
+    }
+
+    h2 {
+      color: #ff3c38;
+      margin: 25px 0 15px;
+    }
+
+    /* --- ACCUEIL --- */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      min-height: 70vh;
+    }
+
+    .hero-text { flex: 1; }
+
+    .profil-img {
+      width: 280px;
+      border-radius: 20px;
+      border: 3px solid #ff3c38;
+      box-shadow: 0 10px 30px rgba(255, 60, 56, 0.3);
+    }
+
+    /* --- GRILLE DE PHOTOS --- */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      transition: 0.3s;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.1) rotate(2deg);
+      z-index: 2;
+      border-color: #ff3c38;
+    }
+
+    /* --- PROJETS --- */
+    .projet-card {
+      display: flex;
+      background: #1a1a1a;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .projet-card:hover {
+      border-color: #ff3c38;
+      transform: translateY(-5px);
+    }
+
+    .projet-card img {
+      width: 300px;
+      object-fit: cover;
+    }
+
+    .projet-info {
+      padding: 25px;
+    }
+
+    /* --- CONTACT --- */
+    .contact-list {
+      list-style: none;
+      font-size: 1.2em;
+    }
+    .contact-list li { margin-bottom: 15px; }
+    .contact-list a { color: #ff3c38; text-decoration: none; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .hero, .projet-card { flex-direction: column; }
+      .projet-card img { width: 100%; height: 200px; }
+      .navbar { padding: 0 5%; }
+      .nav-links { gap: 10px; font-size: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Héléna Guertin</div>
+      <ul class="nav-links">
+        <li><a onclick="showSection('accueil')" id="link-accueil" class="active">Accueil</a></li>
+        <li><a onclick="showSection('annee1')" id="link-annee1">Première Année</a></li>
+        <li><a onclick="showSection('annee2')" id="link-annee2">Deuxième Année</a></li>
+        <li><a onclick="showSection('contact')" id="link-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section id="accueil" class="section active">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>HÉLÉNA GUERTIN</h1>
+      <p>Je m'appelle Héléna Guertin, j'ai 20 ans et je suis actuellement étudiante en <strong>BUT Science des Données</strong>. Curieuse et motivée, je m'intéresse particulièrement à l’analyse et à l’exploitation des données. Sur ce site vous pourrez découvrir les projets qui m'ont le plus marqué et appris lors de mes années d'étude.</p>
+      
+      <p style="margin-top: 20px;">Explorez mes réalisations à travers les onglets de navigation pour découvrir mon évolution durant mon cursus.</p>
+    </div>
+
+    <img src="photo/Photo_moi.png" alt="Photo de Héléna Guertin" class="profil-img">
+  </div>
+
+  <h2>Pour mieux me connaitre :</h2>
+  <p>En dehors de mes études, j'aime le sport, la cuisine, les animaux, les voyages simples et la photographie, qui me permet de capturer des instants du quotidien ou de mes découvertes. Dès que j’en ai l’occasion, je m’engage également dans des actions de bénévolat, cela me permet de faire des rencontres tout en me rendant utile. Ces expériences enrichissent mon parcours personnel et professionnel, tout en renforçant mes valeurs d’entraide et d’ouverture aux autres.</p>
+  
+  <div class="photo-grid">
+    <img src="photo/photo_tresor.jpg" alt="Chien">
+    <img src="photo/photo_jeux.jpg" alt="Loisirs">
+    <img src="photo/photo_repas.jpg" alt="Cuisine">
+    <img src="photo/photo_giraffe.jpg" alt="Voyage">
+    <img src="photo/photo_transporteur.jpg" alt="Transport">
+    <img src="photo/yoga.jpg" alt="Sport">
+  </div>
+</section>
+
+  <section id="annee1" class="section">
+    <h1>Mes Projets BUT 1</h1>
+
+    <div class="projet-card">
+      <img src="Projets_1/VBA.jpg" alt="VBA Project">
+      <div class="projet-info">
+        <h3>Création d’un reporting (VBA)</h3>
+        <p>Nous avons travaillé sur un outil personnel de gestion des notes pour le BUT1 SD en utilisant Excel. Cet outil nous permet d'ajouter, de modifier et de visualiser les notes par semestre, compétence, ressource ou SAÉ grâce à des listes déroulantes interactives. Toutes les données sont regroupées dans une feuille dédiée.
+
+Nous avons mis en place un tableau de bord complet avec des graphiques pour visualiser les résultats par regroupement. De plus, une décision de jury est automatiquement générée en fonction des règles de passage en deuxième année. L'outil permet également d'identifier les compétences validées.
+
+Nous avons utilisé des formules simples d'Excel pour les traitements de base, ainsi que du VBA pour les fonctionnalités plus complexes, notamment pour les UserForms. Un guide d'utilisation est également disponible pour accompagner l'application.</p>
+      </div>
+    </div>
+
+    <div class="projet-card">
+      <img src="Projets_1/economie.jpg" alt="Eco Project">
+      <div class="projet-info">
+        <h3>Analyse Économique & Démographique</h3>
+        <p>Pendant ce projet, nous avons exploré les raisons du succès du NFP dans les Hautes-Alpes, en nous basant sur les données démographiques du recensement INSEE de 2021 (âge, emploi, études, chômage, etc.). Notre analyse a porté sur une sélection de vingt communes représentatives.
+Notre but était de progresser dans la collecte, l'analyse et la présentation de données : extraire des informations d'ensembles de données volumineux, créer des indicateurs significatifs, concevoir des tableaux et graphiques clairs, et rédiger une étude professionnelle et rigoureuse.
+Ce projet m'a permis d'acquérir de nouvelles compétences dans la manipulation de données démographiques complexes, l'extraction d'indicateurs pertinents et leur présentation claire à travers des graphiques et des tableaux. J'ai également amélioré mes compétences en analyse statistique et en rédaction de rapports bien structurés.
+   </p>
+      </div>
+    </div>
+
+    <div class="projet-card">
+      <img src="Projets_1/enquete.jpg" alt="Enquête Sphinx">
+      <div class="projet-info">
+        <h3>Enquête Statistique (Sphinx)</h3>
+        <p>Nous avons mené une enquête statistique à l'aide du logiciel Sphinx, portant sur la pratique sportive des étudiants de l'IUT de Poitiers, site de Niort. Cette étude visait à mieux comprendre les habitudes, les freins et les motivations liés à l'activité physique chez les étudiants, dans un contexte où la sédentarité et le stress sont des problématiques croissantes. Cette enquête m'a permis de mettre en pratique les différentes étapes d'un projet statistique, de la conception du questionnaire à l'analyse des résultats. J'ai appris à formuler des hypothèses, à structurer un questionnaire, à utiliser le logiciel Sphinx pour traiter les données, et à rédiger une synthèse claire. Ce projet m'a également sensibilisée à l'importance de la rigueur, de la neutralité dans l'analyse et de la clarté dans la communication. Enfin, il m'a permis de mieux comprendre la relation entre le sport et le bien-être des étudiants.</p>
+      </div>
+    </div>
+
+    <div class="projet-card">
+      <img src="Projets_1/BDR.jpg" alt="Base de données">
+      <div class="projet-info">
+        <h3>Base de Données SQL & Python</h3>
+        <p>Dans ce projet, nous avons travaillé sur la conception et l'implémentation d'une base de données pour gérer les stocks et les ventes de sel de la coopérative des sauniers de l’île de Ré. En utilisant des fichiers CSV, nous avons modélisé les données, créé les tables en SQL, automatisé l’importation avec Python, puis développé une interface graphique avec Tkinter. Ce projet m'a permis d'acquérir une meilleure compréhension des différentes étapes impliquées dans la création d'une base de données, malgré quelques difficultés rencontrées. J'ai pu apprendre à bien structurer un modèle relationnel, à rédiger des requêtes SQL efficaces et à utiliser Python pour interagir avec la base de données. Il m'a également montré l'importance de la rigueur et de l'organisation dans un projet de développement complet.</p>
+      </div>
+    </div>
+	
+	<div class="projet-card">
+      <img src="Projets_1/concours.jpg" alt="concours_dataviz">
+      <div class="projet-info">
+        <h3>Dataviz (concours)</h3>
+        <p>Ce projet avait pour objectif de créer un outil dynamique capable d’analyser les accidents de la vie courante (AcVC) en France à partir d’un fichier Excel fourni par l’organisme Calyxis. Il s’agissait de comparer le profil des volontaires à celui de la population française, puis d’identifier les facteurs de risque liés aux accidents survenus dans les logements. En groupe, nous avons utilisé la méthode SCRUM pour organiser notre travail : sprints, mêlées quotidiennes, user stories et tableau Kanban ont structuré notre avancement. L’outil que nous avons développé permet de charger un fichier Excel, d’en nettoyer les données automatiquement, puis de générer un tableau de bord avec indicateurs et graphiques interactifs. Ce projet m’a permis de mieux comprendre la gestion de projet agile et de manipuler des données réelles pour produire des analyses utiles.J'ai aussi pris conscience de l'importance de l'automatisation car c'est un gain de temps sur le long terme qui permet d'éviter de refaire le meme nettoyage a chaque utilisation d'un fichier.	   </div>
+    </div>
+	
+
+    <hr style="border: 0; border-top: 1px solid #333; margin: 60px 0 40px 0;">
+    <h1>Bilan Personnel</h1>
+    <p>Dans cette section, vous pouvez consulter mon bilan personnel. Il s’agit d’un document récapitulatif de mes apprentissages et réflexions concernant mon année universitaire.</p>
+    
+    <a href="BILAN_PERSONNEL_1.pdf" target="_blank" style="
+        display: inline-flex; 
+        align-items: center; 
+        background-color: #ff3c38; 
+        color: white; 
+        padding: 12px 25px; 
+        border-radius: 8px; 
+        font-weight: bold; 
+        margin: 20px 0;
+        text-decoration: none;
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#e63532'" onmouseout="this.style.backgroundColor='#ff3c38'">
+        📄 Mon Bilan Personnel
+    </a>
+  </section>
+
+  <section id="annee2" class="section">
+    <h1>Mes Projets BUT 2</h1>
+	
+		<div class="projet-card">
+      <img src="Projets_2/RGPD.png" alt="???">
+      <div class="projet-info">
+        <h3>Conformité réglementaire pour traiter/analyser des données</h3>
+        <p> Los de ce projet, nous avons réalisé un audit et rédigé un plan de mise en conformité au RGPD pour le service Ressources Humaines d'une entreprise industrielle. Notre travail a consisté à analyser leurs processus de gestion afin d'identifier les risques juridiques et de proposer des solutions de sécurisation et de tri des données. Ce projet nous a appris à appliquer concrètement des règles juridiques complexes à des données professionnelles réelles. Nous avons ainsi développé notre capacité à évaluer la sensibilité et la légitimité des informations manipulées par une organisation. Enfin, cette expérience en équipe nous a permis d'apprendre à traduire des contraintes légales strictes en actions de gestion concrètes et réalistes.</p>
+		<a href="Projets_2/Droit.pdf" download class="btn-rapport">
+		  📄 Visualiser le rapport
+		</a>
+      </div>
+    </div>
+
+
+	<div class="projet-card">
+	  <img src="Projets_2/uranium.jpg" alt="Description projet uranium">
+	  
+	  <div class="projet-info">
+		<h3>Description et prévision de données temporelles</h3>
+		
+		<p>
+		  Ce projet de groupe avait pour objectif d’analyser l’évolution du prix de l’uranium sur la période 2016-2025 et de proposer des prévisions jusqu’en 2026. À partir de données mensuelles, nous avons étudié les tendances, la saisonnalité et la volatilité du marché, puis construit un modèle statistique additif avec une tendance quadratique, jugé le plus pertinent pour expliquer les variations observées. Ce modèle nous a permis d’établir des prévisions montrant une poursuite globale de la hausse du prix de l’uranium.
+
+		  Ce travail nous a permis de développer des compétences en analyse de séries temporelles, en modélisation statistique et en interprétation de données économiques. Nous avons également appris à comparer différents modèles, à justifier nos choix méthodologiques et à travailler efficacement en équipe, en renforçant nos capacités d’organisation et de communication.
+		</p>
+
+		<!-- Bouton téléchargement -->
+		<a href="Projets_2/Rapport_uranium.pdf" download class="btn-rapport">
+		  📄 Visualiser le rapport
+		</a>
+	  </div>
+	</div>
+	
+		<div class="projet-card">
+      <img src="Projets_2/Datawarehouse.png" alt="???">
+      <div class="projet-info">
+        <h3>Intégration de données dans un Datawarehouse </h3>
+        <p> Dans ce projet, basé sur l'archive "etl_project.zip", nous avons travaillé sur la conception et l'implémentation d'un pipeline ETL pour automatiser le traitement de flux de données. En utilisant des fichiers CSV bruts de personnes et de transactions, nous avons modélisé les données, configuré une base de données en SQL, automatisé l’extraction et le nettoyage avec Python, puis conteneurisé l’ensemble de l'application avec Docker et Docker Compose. Ce projet nous a permis d'acquérir une meilleure compréhension des différentes étapes impliquées dans l'ingénierie des données, malgré quelques difficultés rencontrées lors de la synchronisation des services. Nous avons pu apprendre à bien structurer un pipeline robuste, à rédiger des scripts de validation efficaces et à utiliser la conteneurisation pour isoler un environnement de développement. Il nous a également montré l'importance de la rigueur et de l'organisation dans un projet de traitement de données complet.</p>
+      </div>
+    </div>
+	
+	<div class="projet-card">
+      <img src="Projets_2/Velib.png" alt="Velib">
+      <div class="projet-info">
+        <h3>Collecte et Analyse de Données via (API)</h3>
+        <p>Ce projet consistait à mettre en place des scripts Python capables de communiquer avec des serveurs distants comme ceux d'OpenWeatherMap pour la météo ou d'Open Data Soft pour les stations Velib' à Paris afin de récupérer des flux de données en temps réel. J'ai appris à utiliser la librairie requests pour envoyer des requêtes HTTP et à manipuler les réponses au format JSON en les transformant en dictionnaires Python pour en extraire les informations utiles comme les températures ou la disponibilité des vélos. Cette expérience m'a également permis de perfectionner ma gestion des bases de données avec Pandas en convertissant ces flux en tableaux structurés pour nettoyer les doublons et effectuer des analyses statistiques poussées via des fonctions d'agrégation et de filtrage directement intégrées aux URL. Enfin, j'ai découvert l'importance de la validation technique en utilisant l'outil Postman pour tester la fiabilité des API avant de les intégrer dans un outil décisionnel complet      </div>
+    </div>
+	
+	
+	<div class="projet-card">
+      <img src="Projets_2/interfaceweb.png" alt="???">
+      <div class="projet-info">
+        <h3>Création d'une interface web</h3>
+        <p> Ce projet en équipe consistait à développer un dashboard interactif comparant deux villes de plus de 20 000 habitants via une architecture HTML/CSS/JavaScript et la bibliothèque Plotly. L'interface intègre une cartographie ainsi que des données sur l'emploi, le logement et la météo annuelle, complétées par des indicateurs open data sur la culture et les transports.  Sur le plan personnel, l'appropriation globale de ce projet a été un véritable défi. Trouver mon élan au sein de la dynamique collective et me plonger dans la logique technique a demandé un temps d'adaptation important. J'ai néanmoins fait le nécessaire pour suivre le rythme de l'équipe et contribuer à l'avancement du travail.</p>
+      </div>
+    </div>
+	
+	    <div class="projet-card">
+      <img src="Projets_2/territoire.jpg" alt="IA">
+      <div class="projet-info">
+        <h3>Sensibilisation des lycéens à l'utilisation de l'IA</h3>
+        <p>Dans le cadre d'un engagement bénévole avec l'association Latitudes, ce projet visait à sensibiliser les élèves de seconde du lycée de la Venise Verte aux enjeux cruciaux du numérique et de l'intelligence artificielle. J'ai appris à vulgariser des concepts techniques complexes à travers l'animation d'ateliers ludiques et interactifs comme le jeu "Future of IA", permettant de rendre la science des données accessible à un public non expert. Cette expérience a été déterminante pour développer mon aisance à l'oral et ma capacité de transmission, tout en approfondissant ma propre compréhension de l'impact sociétal de l'IA. En intervenant directement dans le cadre d'un projet pédagogique structuré, j'ai pu valoriser les compétences acquises en BUT SD et contribuer activement à la formation de citoyens éclairés face aux évolutions technologiques actuelles.</p>
+		
+		<a href="Projets_2/Rapport_Futur_of_IA.pdf" download class="btn-rapport">
+		  📄 Visualiser le rapport
+		</a>
+	  
+	  </div>
+    </div>
+	
+	
+	<div class="projet-card">
+      <img src="Projets_2/Rshiny.png" alt="???">
+      <div class="projet-info">
+        <h3>Reporting d'une analyse multivariée avec R shiny</h3>
+        <p> Dans le cadre de notre projet sur la pauvreté monétaire en France, nous avons développé un tableau de bord interactif en croisant les données 2021 de l'INSEE, de la BPE et de l'IGN pour explorer les dynamiques territoriales de ce phénomène. Après une première étude des corrélations, nous avons appliqué une Analyse en Composantes Principales (ACP) ainsi que des méthodes de classification non supervisée comme le K-means et la CAH afin de segmenter les départements. Le développement complet de cette application nous a surtout permis de parfaitement comprendre et maîtriser l'interface R Shiny. Ce projet a été une excellente occasion d'appliquer concrètement les notions statistiques vus en cours, en nous adaptant rapidement aux exigences du sujet pour lier habilement le logement, l'emploi et l'accès aux services. Enfin, ce travail d'équipe mené en totale autonomie a grandement consolidé nos compétences en programmation et en analyse de données.</p>
+      </div>
+    </div>
+	
+	
+	<div class="projet-card">
+      <img src="Projets_2/Stage.png" alt="Stage">
+      <div class="projet-info">
+        <h3>Stage à l'université de Iasi (Roumanie)</h3>
+        <p> Durant mon stage à l'Université de la FEAA (Faculté d'Économie et d'Administration des Affaires)à Iași, j'ai étudié les facteurs de l'absentéisme au travail.
+J'ai exploité la base de données de l'enquête européenne EHIS 3 axée sur les arrêts maladie.
+Sous RStudio, j'ai d'abord nettoyé les données pour cibler la population active en emploi.
+J'ai conçu et développé une application de datavisualisation interactive avec R Shiny et Plotly.
+Dans un second temps, j'ai mis en place un modèle statistique de régression logistique.
+Grâce au calcul des Odds Ratios, j'ai identifié les principaux facteurs influençant l'absentéisme.
+Ce projet m'a permis d'appliquer concrètement les connaissances et outils vus en cours.
+J'ai su m'adapter rapidement et efficacement aux spécificités du sujet de recherche donné.
+J'ai fait preuve d'une grande autonomie tout au long de la réalisation de ces missions.
+Ce stage a ainsi renforcé mes compétences techniques et mon professionnalisme en analyse de données. </p>
+
+		<a href="Projets_2/Rapport_de_stage_Héléna_Guertin.pdf" download class="btn-rapport">
+		  📄 Visualiser le rapport
+		</a></div>
+    </div>
+	
+
+    <hr style="border: 0; border-top: 1px solid #333; margin: 60px 0 40px 0;">
+    <h1>Bilan Personnel</h1>
+    <p>Dans cette section, vous pouvez consulter mon bilan personnel. Il s’agit d’un document récapitulatif de mes apprentissages et réflexions concernant mon année universitaire.</p>
+    
+    <a href="BILAN_PERSONNEL_2.pdf" target="_blank" style="
+        display: inline-flex; 
+        align-items: center; 
+        background-color: #ff3c38; 
+        color: white; 
+        padding: 12px 25px; 
+        border-radius: 8px; 
+        font-weight: bold; 
+        margin: 20px 0;
+        text-decoration: none;
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#e63532'" onmouseout="this.style.backgroundColor='#ff3c38'">
+        📄 Mon Bilan Personnel
+    </a>
+  </section>
+
+	 <section id="contact" class="section">
+	  <h1>Me Contacter</h1>
+	  <ul class="contact-list">
+		<li><strong>Email :</strong> <a href="mailto:helenaguertin@gmail.com">helenaguertin@gmail.com</a></li>
+		<li><strong>Téléphone :</strong> 07.66.25.66.96</li>
+		<li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/helena-guertin-7a5a45344" target="_blank">Profil Professionnel</a></li>
+		<li><strong>Mon CV :</strong> <a href="CV_Héléna_Guertin_Alternance.pdf" download="CV_Héléna_Guertin_Alternance.pdf">Télécharger mon CV</a></li>
+	  </ul>
+	</section>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => link.classList.remove('active'));
+
+      document.getElementById(sectionId).classList.add('active');
+      document.getElementById('link-' + sectionId).classList.add('active');
+
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>

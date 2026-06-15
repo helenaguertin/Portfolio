@@ -1,0 +1,29 @@
+# System
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Env
+.env
+
+# Build
+dist/
+build/
+
+# Images / exports
+*.log
+*.tmp
+
+# OneDrive
+~$*
+
+# Others
+*.cache
